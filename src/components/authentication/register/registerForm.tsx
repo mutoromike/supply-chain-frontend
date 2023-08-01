@@ -1,5 +1,5 @@
-import { RegistrationFormProps } from "../../../types/user";
-
+import { Stack, TextField, Button } from '@mui/material';
+import { RegistrationFormProps } from '../../../types/user';
 
 const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
 	const handleSubmit = (e: React.FormEvent) => {
@@ -23,43 +23,59 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<div>
-				<label>
-					First Name:
-					<input type="text" name="firstName" />
-				</label>
-			</div>
-			<div>
-				<label>
-					Last Name:
-					<input type="text" name="lastName" />
-				</label>
-			</div>
-			<div>
-				<label>
-					Phone Number:
-					<input type="text" name="phone" />
-				</label>
-			</div>
-			<div>
-				<label>
-					Email:
-					<input type="text" name="email" />
-				</label>
-			</div>
-			<div>
-				<label>
-					Address:
-					<input type="text" name="address" />
-				</label>
-			</div>
-			<div>
-				<label>
-					Password:
-					<input type="password" name="password" />
-				</label>
-			</div>
-			<button type="submit">Register</button>
+			<Stack spacing={2} direction="column" alignItems="center">
+				<TextField
+					label="First Name"
+					type="text"
+					name="firstName"
+					variant="outlined"
+					required
+					sx={{ width: '300px' }}
+				/>
+				<TextField
+					label="Last Name"
+					type="text"
+					name="lastName"
+					variant="outlined"
+					required
+					sx={{ width: '300px' }}
+				/>
+				<TextField
+					label="Phone Number"
+					type="text"
+					name="phone"
+					variant="outlined"
+					required
+					sx={{ width: '300px' }}
+				/>
+				<TextField
+					label="Email"
+					type="text"
+					name="email"
+					variant="outlined"
+					required
+					sx={{ width: '300px' }}
+				/>
+				<TextField
+					label="Address"
+					type="text"
+					name="address"
+					variant="outlined"
+					required
+					sx={{ width: '300px' }}
+				/>
+				<TextField
+					label="Password"
+					type="password"
+					name="password"
+					variant="outlined"
+					required
+					sx={{ width: '300px' }}
+				/>
+				<Button type="submit" variant="contained" color="primary">
+					Register
+				</Button>
+			</Stack>
 		</form>
 	);
 };

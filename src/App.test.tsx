@@ -1,9 +1,17 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { AuthProvider } from './services/AuthContext';
+import { MemoryRouter } from 'react-router-dom';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders register', () => {
+	render(
+		<AuthProvider>
+			<MemoryRouter>
+				<App />
+			</MemoryRouter>
+		</AuthProvider>,
+	);
+	const linkElement = screen.getByText(/LOGIN/i);
+	expect(linkElement).toBeInTheDocument();
 });

@@ -18,4 +18,5 @@ export interface ItemFormProps {
         description: string,
         manufacturer: string,
 	) => void;
+    item?: ItemType;
 }

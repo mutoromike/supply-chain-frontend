@@ -1,3 +1,4 @@
+import { TextField, Button, Stack } from '@mui/material';
 import { LoginFormProps } from '../../../types/user';
 
 const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
@@ -14,19 +15,29 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<div>
-				<label>
-					Email:
-					<input type="text" name="email" />
-				</label>
-			</div>
-			<div>
-				<label>
-					Password:
-					<input type="password" name="password" />
-				</label>
-			</div>
-			<button type="submit">Login</button>
+			<Stack spacing={2} direction="column" alignItems="center">
+				<TextField
+					label="Email"
+					type="text"
+					name="email"
+					fullWidth
+					variant="outlined"
+					required
+					sx={{ width: '300px' }}
+				/>
+				<TextField
+					label="Password"
+					type="password"
+					name="password"
+					fullWidth
+					variant="outlined"
+					required
+					sx={{ width: '300px' }}
+				/>
+				<Button type="submit" variant="contained" color="primary">
+					Login
+				</Button>
+			</Stack>
 		</form>
 	);
 };

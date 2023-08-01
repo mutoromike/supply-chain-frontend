@@ -1,5 +1,6 @@
 // AuthContext.tsx
 import React, { createContext, useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface AuthContextType {
 	token: string;
@@ -25,7 +26,7 @@ export const AuthProvider: React.FC<{ children?: any }> = ({ children }) => {
 		localStorage.removeItem('token');
 	};
 
-	const isAuthenticated = () => !!token;
+	const isAuthenticated = () => !!token.length;
 
 	const authContextValue: AuthContextType = {
 		token,
