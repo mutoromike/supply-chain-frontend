@@ -25,6 +25,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+#### Deployment Process:
+ - Clone the project and ensure the API is running before proceeding to nest steps.
  - Create build
 `npm run build`
  - Install `Serve` with the command: `npm install -g serve`
